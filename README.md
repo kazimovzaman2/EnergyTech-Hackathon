@@ -36,3 +36,7 @@ You can start the development server by running:
 python manage.py runserver
 ```
 
+
+
+[EnergyTech-Hackathon.pptx](https://github.com/kazimovzaman2/EnergyTech-Hackathon1/files/11241119/EnergyTech-Hackathon.pptx)
+
