@@ -1,5 +1,7 @@
 # EnergyTech-Hackathon
 
+![energy](https://user-images.githubusercontent.com/92586852/232287110-fa86c1ab-8e48-480c-9d16-385131cfe764.jpg)
+
 
 ## Energy Consumption Management System
 
