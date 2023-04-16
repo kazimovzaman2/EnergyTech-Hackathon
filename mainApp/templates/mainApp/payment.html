@@ -1,0 +1,613 @@
+<!DOCTYPE html>
+{% load static %}
+<html dir="ltr" lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <!-- Tell the browser to be responsive to screen width -->
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="keywords"
+      content="wrappixel, admin dashboard, html css dashboard, web dashboard, bootstrap 5 admin, bootstrap 5, css3 dashboard, bootstrap 5 dashboard, Matrix lite admin bootstrap 5 dashboard, frontend, responsive bootstrap 5 admin template, Matrix admin lite design, Matrix admin lite dashboard bootstrap 5 dashboard template"
+    />
+    <meta
+      name="description"
+      content="Matrix Admin Lite Free Version is powerful and clean admin dashboard template, inpired from Bootstrap Framework"
+    />
+    <meta name="robots" content="noindex,nofollow" />
+    <title>EnergyTech Web App</title>
+    <!-- Favicon icon -->
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="{% static '/landing/img/azerisiq.png' %}"
+    />
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-alpha1/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <link href="{% static '/dashboard/assets/libs/flot/css/float-chart.css' %}" rel="stylesheet" />
+    <!-- Custom CSS -->
+    <link href="{% static '/dashboard/dist/css/style.min.css' %}" rel="stylesheet" />
+    
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <style>
+        @import url("https://fonts.googleapis.com/css2?family=Poppins:weight@100;200;300;400;500;600;700;800&display=swap");
+
+
+       body{
+        background-color:#f5eee7;
+        font-family: "Poppins", sans-serif;
+        font-weight: 300;
+       }
+
+       .container{
+
+        height: 100vh;
+
+       }
+
+       .card{
+
+        border: none;
+       }
+
+       .card-header {
+            padding: .5rem 1rem;
+            margin-bottom: 0;
+            background-color: rgba(0,0,0,.03);
+            border-bottom: none;
+        }
+
+        .btn-light:focus {
+            color: #212529;
+            background-color: #e2e6ea;
+            border-color: #dae0e5;
+            box-shadow: 0 0 0 0.2rem rgba(216,217,219,.5);
+        }
+
+        .form-control{
+
+          height: 50px;
+    border: 2px solid #eee;
+    border-radius: 6px;
+    font-size: 14px;
+        }
+
+        .form-control:focus {
+    color: #495057;
+    background-color: #fff;
+    border-color: #039be5;
+    outline: 0;
+    box-shadow: none;
+
+    }
+
+    .input{
+
+      position: relative;
+    }
+
+    .input i{
+
+          position: absolute;
+    top: 16px;
+    left: 11px;
+    color: #989898;
+    }
+
+    .input input{
+
+      text-indent: 25px;
+    }
+
+    .card-text{
+
+      font-size: 13px;
+    margin-left: 6px;
+    }
+
+    .certificate-text{
+
+      font-size: 12px;
+    }
+
+       
+    .billing{
+      font-size: 11px;
+    }  
+
+    .super-price{
+
+          top: 0px;
+    font-size: 22px;
+    }
+
+    .super-month{
+
+          font-size: 11px;
+    }
+
+
+    .line{
+      color: #bfbdbd;
+    }
+
+    .free-button{
+
+          background: #1565c0;
+    height: 52px;
+    font-size: 15px;
+    border-radius: 8px;
+    }
+
+
+    .payment-card-body{
+
+    flex: 1 1 auto;
+    padding: 24px 1rem !important;
+
+    }
+    </style>
+  </head>
+
+  <body>
+    <!-- ============================================================== -->
+    <!-- Preloader - style you can find in spinners.css -->
+    <!-- ============================================================== -->
+    <!-- <div class="preloader">
+      <div class="lds-ripple">
+        <div class="lds-pos"></div>
+        <div class="lds-pos"></div>
+      </div>
+    </div> -->
+    <!-- ============================================================== -->
+    <!-- Main wrapper - style you can find in pages.scss -->
+    <!-- ============================================================== -->
+    <div
+      id="main-wrapper"
+      data-layout="vertical"
+      data-navbarbg="skin5"
+      data-sidebartype="full"
+      data-sidebar-position="absolute"
+      data-header-position="absolute"
+      data-boxed-layout="full"
+    >
+      <!-- ============================================================== -->
+      <!-- Topbar header - style you can find in pages.scss -->
+      <!-- ============================================================== -->
+      <header class="topbar" data-navbarbg="skin5">
+        <nav class="navbar top-navbar navbar-expand-md navbar-dark">
+          <div class="navbar-header" data-logobg="skin5">
+            <!-- ============================================================== -->
+            <!-- Logo -->
+            <!-- ============================================================== -->
+            <a class="navbar-brand" href="{% url 'dashboard' %}">
+              <!-- Logo icon -->
+              <b class="logo-icon ps-2">
+                <!--You can put here icon as well // <i class="wi wi-sunset"></i> //-->
+                <!-- Dark Logo icon -->
+                
+              </b>
+              <!--End Logo icon -->
+              <!-- Logo text -->
+              <span style="font-weight: 800; font-size: larger; color: #1de9b6;" class="logo-text ms-2">
+                <!-- dark Logo text -->
+                EnergyTech
+              </span>
+              <!-- Logo icon -->
+              <!-- <b class="logo-icon"> -->
+              <!--You can put here icon as well // <i class="wi wi-sunset"></i> //-->
+              <!-- Dark Logo icon -->
+              <!-- <img src="../assets/images/logo-text.png" alt="homepage" class="light-logo" /> -->
+
+              <!-- </b> -->
+              <!--End Logo icon -->
+            </a>
+            <!-- ============================================================== -->
+            <!-- End Logo -->
+            <!-- ============================================================== -->
+            <!-- ============================================================== -->
+            <!-- Toggle which is visible on mobile only -->
+            <!-- ============================================================== -->
+            <a
+              class="nav-toggler waves-effect waves-light d-block d-md-none"
+              href="javascript:void(0)"
+              ><i class="ti-menu ti-close"></i
+            ></a>
+          </div>
+          <!-- ============================================================== -->
+          <!-- End Logo -->
+          <!-- ============================================================== -->
+          <div
+            class="navbar-collapse collapse"
+            id="navbarSupportedContent"
+            data-navbarbg="skin5"
+          >
+            <!-- ============================================================== -->
+            <!-- toggle and nav items -->
+            <!-- ============================================================== -->
+            <ul class="navbar-nav  me-auto">
+              <li class="nav-item d-none d-lg-block">
+                <a
+                  class="nav-link sidebartoggler waves-effect waves-light"
+                  href="javascript:void(0)"
+                  data-sidebartype="mini-sidebar"
+                  ><i class="mdi mdi-menu font-24"></i
+                ></a>
+              </li>
+              
+            <!-- ============================================================== -->
+            <!-- Right side toggle and nav items -->
+            <!-- ============================================================== -->
+            <a href="{% url 'logout' %}" id="logout">Log Out</a>
+          </div>
+        </nav>
+      </header>
+      <!-- ============================================================== -->
+      <!-- End Topbar header -->
+      <!-- ============================================================== -->
+      <!-- ============================================================== -->
+      <!-- Left Sidebar - style you can find in sidebar.scss  -->
+      <!-- ============================================================== -->
+      <aside class="left-sidebar" data-sidebarbg="skin5">
+        <!-- Sidebar scroll-->
+        <div class="scroll-sidebar">
+          <!-- Sidebar navigation-->
+          <nav class="sidebar-nav">
+            <ul id="sidebarnav" class="pt-4">
+              <li class="sidebar-item">
+                <a
+                  class="sidebar-link waves-effect waves-dark sidebar-link"
+                  href="{% url 'dashboard' %}"
+                  aria-expanded="false"
+                  ><i class="mdi mdi-view-dashboard"></i
+                  ><span class="hide-menu">Dashboard</span></a
+                >
+              </li>
+              <li class="sidebar-item">
+                <a
+                  class="sidebar-link waves-effect waves-dark sidebar-link"
+                  href="{% url 'pages-calendar' %}"
+                  aria-expanded="false"
+                  ><i class="mdi mdi-calendar-check"></i
+                  ><span class="hide-menu">Calendar</span></a
+                >
+              </li>
+              <li class="sidebar-item">
+                <a
+                  class="sidebar-link waves-effect waves-dark sidebar-link"
+                  href="{% url 'payment' %}"
+                  aria-expanded="false"
+                  ><i class="mdi mdi-cash-multiple"></i
+                  ><span class="hide-menu">Payment</span></a
+                >
+              </li>
+            </ul>
+          </nav>
+          <!-- End Sidebar navigation -->
+        </div>
+        <!-- End Sidebar scroll-->
+      </aside>
+      <!-- ============================================================== -->
+      <!-- End Left Sidebar - style you can find in sidebar.scss  -->
+      <!-- ============================================================== -->
+      <!-- ============================================================== -->
+      <!-- Page wrapper  -->
+      <!-- ============================================================== -->
+      <div class="page-wrapper">
+        <!-- ============================================================== -->
+        <!-- Bread crumb and right sidebar toggle -->
+        <!-- ============================================================== -->
+        <div class="page-breadcrumb">
+          <div class="row">
+            <div class="col-12 d-flex no-block align-items-center">
+              <div class="ms-auto text-end">
+                <nav aria-label="breadcrumb">
+                  <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="{% url 'index' %}">Home</a></li>
+                    <li class="breadcrumb-item active" aria-current="page">
+                      Library
+                    </li>
+                  </ol>
+                </nav>
+              </div>
+            </div>
+          </div>
+        </div>
+
+
+
+
+        <div class="container d-flex justify-content-center mt-5 mb-5">
+
+            
+
+            <div class="row g-3">
+        
+              <div class="col-md-6">  
+                
+                <span>Payment Method</span>
+                <div class="card">
+        
+                  <div class="accordion" id="accordionExample">
+                    
+                    <div class="card">
+                      <div class="card-header p-0" id="headingTwo">
+                        <h2 class="mb-0">
+                          <button class="btn btn-light btn-block text-left collapsed p-3 rounded-0 border-bottom-custom" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                            <div class="d-flex align-items-center justify-content-between">
+        
+                              <span>Paypal</span>
+                              <img src="https://i.imgur.com/7kQEsHU.png" width="30">
+                              
+                            </div>
+                          </button>
+                        </h2>
+                      </div>
+                      <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
+                        <div class="card-body">
+                          <input type="text" class="form-control" placeholder="Paypal email">
+                        </div>
+                      </div>
+                    </div>
+        
+                    <div class="card">
+                      <div class="card-header p-0">
+                        <h2 class="mb-0">
+                          <button class="btn btn-light btn-block text-left p-3 rounded-0" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                            <div class="d-flex align-items-center justify-content-between">
+        
+                              <span>Credit card</span>
+                              <div class="icons">
+                                <img src="https://i.imgur.com/2ISgYja.png" width="30">
+                                <img src="https://i.imgur.com/W1vtnOV.png" width="30">
+                                <img src="https://i.imgur.com/35tC99g.png" width="30">
+                                <img src="https://i.imgur.com/2ISgYja.png" width="30">
+                              </div>
+                              
+                            </div>
+                          </button>
+                        </h2>
+                      </div>
+        
+                      <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample">
+                        <div class="card-body payment-card-body">
+                          
+                          <span class="font-weight-normal card-text">Card Number</span>
+                          <div class="input">
+        
+                            <i class="fa fa-credit-card"></i>
+                            <input type="text" class="form-control" placeholder="0000 0000 0000 0000">
+                            
+                          </div> 
+        
+                          <div class="row mt-3 mb-3">
+        
+                            <div class="col-md-6">
+        
+                              <span class="font-weight-normal card-text">Expiry Date</span>
+                              <div class="input">
+        
+                                <i class="fa fa-calendar"></i>
+                                <input type="text" class="form-control" placeholder="MM/YY">
+                                
+                              </div> 
+                              
+                            </div>
+        
+        
+                            <div class="col-md-6">
+        
+                              <span class="font-weight-normal card-text">CVC/CVV</span>
+                              <div class="input">
+        
+                                <i class="fa fa-lock"></i>
+                                <input type="text" class="form-control" placeholder="000">
+                                
+                              </div> 
+                              
+                            </div>
+                            
+        
+                          </div>
+        
+                          <span class="text-muted certificate-text"><i class="fa fa-lock"></i> Əməliyyatınız ssl sertifikatı ilə qorunur</span>
+                         
+                        </div>
+                      </div>
+                    </div>
+                    
+                  </div>
+                  
+                </div>
+        
+              </div>
+        
+              <div class="col-md-6">
+                  <span>Yekun</span>
+        
+                  <div class="card">
+        
+                    <div class="d-flex justify-content-between p-3">
+        
+                      <div class="d-flex flex-column">
+        
+                        <span>Yekun ödəniş<i class="fa fa-caret-down"></i></span>
+                        <a href="#" class="billing">İllik ödənişlərdə 20% endirim qazanın</a>
+                        
+                        <span class="font-weight-normal card-text">Ödəniş məbləği</span>
+                        <div class="input">
+      
+                          <i class="fa fa-credit-card"></i>
+                          <input type="text" name="money" class="form-control" placeholder="20 azn">
+                          
+                        </div> 
+
+
+                      </div>
+        
+                      <div class="mt-1">
+                      </div>
+                      
+                    </div>
+        
+                    <hr class="mt-0 line">
+
+        
+                    <hr class="mt-0 line">
+        
+        
+                    <div class="p-3">
+        
+                    <button class="btn btn-primary btn-block free-button">Elektrik xərclərinizi ödəyin.</button> 
+                    <div class="text-center">
+                      <a href="#">Promo Kodunuz var?</a>
+                    </div>
+                      
+                    </div>
+        
+        
+        
+                    
+                  </div>
+              </div>
+              
+            </div>
+            
+        
+          </div>
+        
+          
+        
+
+          <div class="card shadow" id="chat-sohbet" style="height: 500px; width: 450px; border-radius: 1em;">
+            <div class="card-body">
+              <h4 class="card-title">ChatBot</h4>
+              <div class="chat-box scrollable" style="height: 320px;">
+                <!--chat Row -->
+                <ul class="chat-list" id="chatlist">
+                  <!--chat Row -->
+                  <li class="chat-item">
+                    <div class="chat-img">
+                      <img src="{% static '/dashboard/assets/images/users/1.jpg' %}" alt="user" />
+                    </div>
+                    <div class="chat-content">
+                      <h6 class="font-medium">ChatBot</h6>
+                      <div class="box bg-light-info me-5">
+                        Lorem Ipsum is simply dummy text of the printing
+                        &amp; type setting industry.
+                      </div>
+                    </div>
+                    <div class="chat-time">10:56</div>
+                  </li>
+                  <!--chat Row -->
+                  <li class="odd chat-item">
+                    <div class="chat-content">
+                      <div class="box bg-light-inverse ml-5">
+                        Whats budget of the new project.
+                      </div>
+                    </div>
+                    <div class="chat-time">10:59</div>
+                  </li>
+                  <!--chat Row -->
+                  
+                  
+                  
+                </ul>
+              </div>
+            </div>
+            <div class="card-body border-top">
+              <div class="row">
+                <div class="col-9">
+                  <div class="input-field mx-0">
+                    <textarea
+                      id="textarea1"
+                      placeholder="Type and enter"
+                      class="form-control border-0"
+                    ></textarea>
+                  </div>
+                </div>
+                <div class="col-3">
+                  <a
+                    class="btn-circle btn-lg btn-cyan float-end text-white"
+                    href="javascript:void(0)" onclick="send()">
+                    <i class="mdi mdi-send fs-3"></i>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="chat-button" id="chat-button" onclick="chatToggler()">
+            <i class="fa-regular fa-message"></i>
+          </div>
+
+
+
+
+        <!-- ============================================================== -->
+        <!-- End Container fluid  -->
+        <!-- ============================================================== -->
+        <!-- ============================================================== -->
+        <!-- footer -->
+        <!-- ============================================================== -->
+        <footer class="footer text-center">
+          All Rights Reserved by EnergyTech. Designed and Developed by
+          Hackathronix.
+        </footer>
+        <!-- ============================================================== -->
+        <!-- End footer -->
+        <!-- ============================================================== -->
+      </div>
+      <!-- ============================================================== -->
+      <!-- End Page wrapper  -->
+      <!-- ============================================================== -->
+    </div>
+    <!-- ============================================================== -->
+    <!-- End Wrapper -->
+    <!-- ============================================================== -->
+    <!-- ============================================================== -->
+    <!-- All Jquery -->
+    <!-- ============================================================== -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-alpha1/dist/js/bootstrap.bundle.min.js">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js">
+    <script src="{% static '/dashboard/assets/libs/jquery/dist/jquery.min.js' %}"></script>
+    <!-- Bootstrap tether Core JavaScript -->
+    <script src="{% static '/dashboard/assets/libs/bootstrap/dist/js/bootstrap.bundle.min.js' %}"></script>
+    <script src="{% static '/dashboard/assets/libs/perfect-scrollbar/dist/perfect-scrollbar.jquery.min.js' %}"></script>
+    <script src="{% static '/dashboard/assets/extra-libs/sparkline/sparkline.js' %}"></script>
+    <!--Wave Effects -->
+    <script src="{% static '/dashboard/dist/js/waves.js' %}"></script>
+    <!--Menu sidebar -->
+    <script src="{% static '/dashboard/dist/js/sidebarmenu.js' %}"></script>
+    <!--Custom JavaScript -->
+    <script src="{% static '/dashboard/dist/js/custom.min.js' %}"></script>
+    <!--This page JavaScript -->
+    <!-- <script src="../dist/js/pages/dashboards/dashboard1.js"></script> -->
+    <!-- Charts js Files -->
+    <script src="{% static '/dashboard/assets/libs/flot/excanvas.js' %}"></script>
+    <script src="{% static '/dashboard/assets/libs/flot/jquery.flot.js' %}"></script>
+    <script src="{% static '/dashboard/assets/libs/flot/jquery.flot.pie.js' %}"></script>
+    <script src="{% static '/dashboard/assets/libs/flot/jquery.flot.time.js' %}"></script>
+    <script src="{% static '/dashboard/assets/libs/flot/jquery.flot.stack.js' %}"></script>
+    <script src="{% static '/dashboard/assets/libs/flot/jquery.flot.crosshair.js' %}"></script>
+    <script src="{% static '/dashboard/assets/libs/flot.tooltip/js/jquery.flot.tooltip.min.js' %}"></script>
+    <script src="{% static '/dashboard/dist/js/pages/chart/chart-page-init.js' %}"></script>
+
+    <script src="{% static '/dashboard/assets/libs/chart/matrix.interface.js' %}"></script>
+    <script src="{% static '/dashboard/assets/libs/chart/excanvas.min.js' %}"></script>
+    <script src="{% static '/dashboard/assets/libs/chart/jquery.peity.min.js' %}"></script>
+    <script src="{% static '/dashboard/assets/libs/chart/matrix.charts.js' %}"></script>
+    <script src="{% static '/dashboard/assets/libs/chart/jquery.flot.pie.min.js' %}"></script>
+    <script src="{% static '/dashboard/assets/libs/chart/turning-series.js' %}"></script>
+
+    <script src="https://kit.fontawesome.com/b483b8c1ee.js" crossorigin="anonymous"></script>
+    <script src="{% static '/dashboard/dist/js/chat-bot.js' %}"></script>
+  </body>
+</html>
