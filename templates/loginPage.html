@@ -28,7 +28,10 @@
             {% if error %}
                 <div class="alert alert-danger">{{ error }}</div>
             {% endif %}
-            <div class="form-group"><button class="btn btn-primary btn-block" type="submit">Log In</button></div><a href="{% url 'index' %}" class="esas">Esas Sehife</a>
+            <div class="form-group"><button class="btn btn-primary btn-block" type="submit">Log In</button></div>
+            <div class="form-group"><a class="btn btn-dark btn-block" href="{% url 'sign-up' %}" type="submit">Qeydiyyatdan keç?</a></div>
+
+            <a href="{% url 'index' %}" class="esas">Esas Sehife</a>
         </form>
     </div>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>

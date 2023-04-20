@@ -3,6 +3,10 @@ from django.contrib.auth.decorators import login_required
 from django.shortcuts import render, redirect
 from django.urls import reverse
 from django.shortcuts import HttpResponseRedirect
+from django.contrib.auth.forms import UserCreationForm
+from django.db import IntegrityError
+
+from api.models import User
 
 
 # Create your views here.
@@ -33,6 +37,28 @@ def loginPage(request):
 def logoutPage(request):
     logout(request)
     return HttpResponseRedirect(reverse("login"))
+
+
+def sign_up(request):
+    if request.method == "POST":
+        abonet_code = request.POST["abonet_code"]
+
+        password = request.POST["password"]
+
+        # Attempt to create new user
+        try:
+            new_user = User.objects.create_user(abonet_code, password)
+            new_user.save()
+            print(new_user)
+        except IntegrityError:
+            return render(request, "signup.html", {
+                "error": "Abonet Code already taken."
+            })
+        login(request, new_user)
+        return HttpResponseRedirect(reverse("dashboard"))
+    else:
+        return render(request, "signup.html")
+
 
 @login_required(login_url='login')
 def dashboardPage(request):

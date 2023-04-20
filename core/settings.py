@@ -143,7 +143,7 @@ USE_L10N = True
 USE_TZ = True
 
 
-CSRF_TRUSTED_ORIGINS = ['https://*.azurewebsites.net', 'http://192.168.82.139', 'http://192.168.82.244', 'http://192.168.82.225', 'http://192.168.82.90']
+CSRF_TRUSTED_ORIGINS = ['https://*.azurewebsites.net', "http://127.0.0.1:8000/"]
 
 
 
