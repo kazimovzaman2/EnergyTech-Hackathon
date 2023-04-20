@@ -1,6 +1,6 @@
 $(function () {
   
-   fetch('http://127.0.0.1:8000/api/ml-date/')
+   fetch('https://energy-tech.azurewebsites.net/api/ml-date/')
   .then(response => response.json())
   .then(data => {
 

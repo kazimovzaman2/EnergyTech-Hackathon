@@ -1,5 +1,5 @@
 $(function () {
-  fetch('http://127.0.0.1:8000/api/ml-adnsu/')
+  fetch('https://energy-tech.azurewebsites.net/api/ml-adnsu/')
   .then(response => response.json())
   .then(data => {
 let cts = document.getElementById('real-time');
